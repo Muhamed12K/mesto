@@ -1,0 +1,12 @@
+.profaile__image{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center center;
+  object-position: center center;
+  padding: 0;
+  transition: opacity .5s ease-in-out;
+  border-radius: 50%;
+}
