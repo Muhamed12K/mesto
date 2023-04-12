@@ -17,7 +17,7 @@
 @import url(../blocks/profaile/__name-container/profaile__name-container.css);
 @import url(../blocks/profaile/__name/profaile__name.css);
 @import url(../blocks/profaile/__work/profaile__work.css);
-@import url(../blocks/text/text.css);
+@import url(../blocks/profaile/__text/profaile__text.css);
 /* блок photo-grid */
 @import url(../blocks/photo-grid/photo-grid.css);
 @import url(../blocks/photo-grid/__list/photo-grid__list.css);
