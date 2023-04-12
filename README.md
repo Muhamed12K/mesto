@@ -6,3 +6,4 @@
  2. Методология БЭМ  
  3. Адаптивная верстка  
  
+https://muhamed12k.github.io/mesto/
