@@ -1,4 +1,4 @@
-.profaile{
+.profile{
   max-width: 882px;
   margin: 42px 19px 0 19px;
   display: flex;
@@ -9,14 +9,14 @@
 }
 
 @media screen and (min-width: 601px) {
-  .profaile{
+  .profile{
     margin: 40px 19px;
     flex-direction: row;
   }
 }
 
 @media screen and (min-width: 901px) {
-  .profaile{
+  .profile{
     margin: 40px auto 0 auto;
   }
 }

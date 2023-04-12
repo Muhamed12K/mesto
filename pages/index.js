@@ -1,7 +1,7 @@
 let formElement = document.querySelector('.popup__form');
 let nameInput = document.querySelector('.profile__name');
 let jobInput = document.querySelector('.profile__work');
-let profInput = document.querySelector('#profaile-info');
+let profInput = document.querySelector('#profile-info');
 let profclose = document.querySelector('.popup__btn_action_close');
 let cardLikeList = document.querySelectorAll('.card__btn_action_like')
 
