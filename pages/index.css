@@ -8,17 +8,17 @@
 @import url(../blocks/shaded/shaded.css);
 /* блок profile */
 @import url(../blocks/profile/profile.css);
-@import url(../blocks/profile/avatar/profaile__avatar.css);
+@import url(../blocks/profile/avatar/profile__avatar.css);
 @import url(../blocks/profile/btn/profile__btn.css);
 @import url(../blocks/profile/btn/profile__btn_action_add.css);
 @import url(../blocks/profile/btn/profile__btn_action_edit.css);
 @import url(../blocks/profile/btn/profile__btn_action_edit.css);
-@import url(../blocks/profile/image/profaile__image.css);
-@import url(../blocks/profile/info/profail__info.css);
-@import url(../blocks/profile/name-container/profaile__name-container.css);
-@import url(../blocks/profile/name/profaile__name.css);
-@import url(../blocks/profile/text/profaile__text.css);
-@import url(../blocks/profile/work/profaile__work.css);
+@import url(../blocks/profile/image/profile__image.css);
+@import url(../blocks/profile/info/profile__info.css);
+@import url(../blocks/profile/name-container/profile__name-container.css);
+@import url(../blocks/profile/name/profile__name.css);
+@import url(../blocks/profile/text/profile__text.css);
+@import url(../blocks/profile/work/profile__work.css);
 /* блок photo-grid */
 @import url(../blocks/photo-grid/photo-grid.css);
 @import url(../blocks/photo-grid/__list/photo-grid__list.css);
