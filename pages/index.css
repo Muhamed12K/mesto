@@ -8,16 +8,17 @@
 @import url(../blocks/shaded/shaded.css);
 /* блок profaile */
 @import url(../blocks/profaile/profaile.css);
-@import url(../blocks/avatar/profaile__avatar.css);
-@import url(../blocks/btn/profile__btn.css);
-@import url(../blocks/btn/profile__btn_action_add.css);
-@import url(../blocks/btn/profile__btn_action_edit.css);
-@import url(../blocks/image/profaile__image.css);
-@import url(../blocks/info/profail__info.css);
-@import url(../blocks/name-container/profaile__name-container.css);
-@import url(../blocks/text/profaile__text.css);
-@import url(../blocks/name/profaile__name.css);
-@import url(../blocks/work/profaile__work.css);
+@import url(../blocks/profaile/avatar/profaile__avatar.css);
+@import url(../blocks/profaile/btn/profile__btn.css);
+@import url(../blocks/profaile/btn/profile__btn_action_add.css);
+@import url(../blocks/profaile/btn/profile__btn_action_edit.css);
+@import url(../blocks/profaile/btn/profile__btn_action_edit.css);
+@import url(../blocks/profaile/image/profaile__image.css);
+@import url(../blocks/profaile/info/profail__info.css);
+@import url(../blocks/profaile/name-container/profaile__name-container.css);
+@import url(../blocks/profaile/name/profaile__name.css);
+@import url(../blocks/profaile/text/profaile__text.css);
+@import url(../blocks/profaile/work/profaile__work.css);
 /* блок photo-grid */
 @import url(../blocks/photo-grid/photo-grid.css);
 @import url(../blocks/photo-grid/__list/photo-grid__list.css);
