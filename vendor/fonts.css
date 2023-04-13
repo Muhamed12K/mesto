@@ -3,7 +3,7 @@
   font-style:  normal;
   font-weight: 400;
   font-display: swap;
-  src: url("inter-Regular.otf?v=3.19") format("otf");
+  src: url("inter-Regular.otf?v=3.19") format("opentype");
        
 }
 
@@ -12,7 +12,7 @@
   font-style:  normal;
   font-weight: 500;
   font-display: swap;
-  src: url("inter-Medium.otf?v=3.19") format("otf");
+  src: url("inter-Medium.otf?v=3.19") format("opentype");
 }
 
 @font-face {
@@ -20,5 +20,5 @@
   font-style:  normal;
   font-weight: 900;
   font-display: swap;
-  src: url("inter-Black.otf?v=3.19") format("otf");
+  src: url("inter-Black.otf?v=3.19") format("opentype");
 }
