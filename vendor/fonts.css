@@ -3,8 +3,7 @@
   font-style:  normal;
   font-weight: 400;
   font-display: swap;
-  src: url("inter-Regular.otf?v=3.19") format("opentype");
-       
+  src: url("inter-Regular.otf?v=3.19") format("opentype");      
 }
 
 @font-face {
