@@ -10,3 +10,10 @@
   text-align: center;
   transition: all .5s ease;
 }
+
+@media screen and (max-width: 600px) {
+  .popup__btn_action_submit{
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

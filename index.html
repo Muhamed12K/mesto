@@ -17,17 +17,15 @@
     </header>
     <main>
       <section class="profile">
-        <div class="profile__avatar">
-          <img class="profile__image" src="./images/avatar.jpg" alt="фото профиля">
-        </div>
+        <img class="profile__image" src="./images/avatar.jpg" alt="фото профиля">
         <div class="profile__info">
           <div class="profile__name-container">
-            <h1 class="profile__text profile__name">Жак-Ив Кусто</h1>
-            <button id="profile-info" class="profile__btn profile__btn_action_edit shaded"></button>
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button type="button" id="profile-info" class="profile__btn profile__btn_action_edit shaded"></button>
           </div>
-          <p class="profile__text profile__work">Исследователь океана</p>
+          <p class="profile__work">Исследователь океана</p>
         </div>
-        <button class="profile__btn profile__btn_action_add shaded"></button>
+        <button type="button" class="profile__btn profile__btn_action_add shaded"></button>
       </section>
       <section class="photo-grid">
         <ul class="photo-grid__list">
@@ -35,77 +33,61 @@
             <img class="card__image" src="./images/karachaeva-chercesia.jpg" alt="Карачаево-Черкессия">
             <div class="card__description">
               <h2 class="card__taitle">Карачаево-Черкессия</h2>
-              <div class="card__like">
-                <button class="card__btn card__btn_action_like"></button>
-              </div>
+              <button type="button" class="card__btn"></button>
             </div>
           </li>
           <li class="card">
             <img class="card__image" src="./images/elbrus.png" alt="Гора Эльбрус">
             <div class="card__description">
               <h2 class="card__taitle">Гора Эльбрус</h2>
-              <div class="card__like">
-                <button class="card__btn card__btn_action_like"></button>
-              </div>
+              <button type="button" class="card__btn"></button>
             </div>
           </li>
           <li class="card">
             <img class="card__image" src="./images/dombai.png" alt="Домбай">
             <div class="card__description">
               <h2 class="card__taitle">Домбай</h2>
-              <div class="card__like">
-                <button class="card__btn card__btn_action_like"></button>
-              </div>
+              <button type="button" class="card__btn"></button>
             </div>
           </li>
           <li class="card">
             <img class="card__image" src="./images/images1.jpeg" alt="Горы Альпы">
             <div class="card__description">
               <h2 class="card__taitle">Горы Альпы</h2>
-              <div class="card__like">
-                <button class="card__btn card__btn_action_like"></button>
-              </div>
+              <button type="button" class="card__btn"></button>
             </div>
           </li>
           <li class="card">
             <img class="card__image" src="./images/images2.jpg" alt="Горы Саров">
             <div class="card__description">
               <h2 class="card__taitle">Горы Саров</h2>
-              <div class="card__like">
-                <button class="card__btn card__btn_action_like"></button>
-              </div>
+              <button type="button" class="card__btn"></button>
             </div>
           </li>
           <li class="card">
             <img class="card__image" src="./images/i.jpg" alt="дерево Гинкго">
             <div class="card__description">
               <h2 class="card__taitle">дерево Гинкго</h2>
-              <div class="card__like">
-                <button class="card__btn card__btn_action_like shaded"></button>
-              </div>
+              <button type="button" class="card__btn"></button>
             </div>
           </li>
         </ul>
       </section>
     </main>
     <footer class="footer">
-      <a class="footer__item">© 2023 Mesto Russia</a>
+      <p class="footer__item">© 2023 Mesto Russia</p>
     </footer>
     <div class="popup">
       <div class="popup__container">
-          <button class="popup__btn popup__btn_action_close shaded" title="Закрыть форму без сохранения данных"></button>
-          <form class="popup__form">
+          <button type="button" class="popup__btn popup__btn_action_close shaded" title="Закрыть форму без сохранения данных"></button>
+          <form class="popup__form" name="edi-profile">
               <h3 class="popup__heading">Редактировать профиль</h3>
-              <label class="popup__field">
-                  <input class="popup__item popup__item_type_name" placeholder="Имя">
-              </label>
-              <label class="popup__field">
-                  <input class="popup__item popup__item_type_info" placeholder="О себе">
-              </label>
-              <button type="submit" class="popup__btn popup__btn_action_submit">Сохранить</button>
+              <input class="popup__item popup__item_type_name" placeholder="Имя" name="name" type="text">
+              <input class="popup__item popup__item_type_info" placeholder="О себе" name="info" type="text">
+              <button type="submit" class="popup__btn popup__btn_action_submit shaded">Сохранить</button>
           </form>
       </div>
     </div>
-  <script src="./pages/index.js"></script>
+  <script src="./scripts/index.js"></script>
   </body>
 </html>
