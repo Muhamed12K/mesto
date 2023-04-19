@@ -21,9 +21,5 @@
 }
 
 .card__btn:enabled:hover {
-  opacity: .6;
-}
-
-.like__color{
-  background-image: url(../../../images/Union.svg);
+  opacity: .5;
 }

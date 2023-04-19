@@ -13,8 +13,3 @@
   visibility: hidden;
   width: 100%;
 }
-
-.popup_opened {
-  display: flex;
-  visibility: visible;
-}

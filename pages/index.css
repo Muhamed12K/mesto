@@ -19,16 +19,18 @@
 /* блок photo-grid */
 @import url(../blocks/photo-grid/photo-grid.css);
 @import url(../blocks/photo-grid/__btn/card__btn.css);
-@import url(../blocks/photo-grid/__card/card.css);
-@import url(../blocks/photo-grid/__card/__taitle/card__taitle.css);
-@import url(../blocks/photo-grid/__card/__image/card__image.css);
-@import url(../blocks/photo-grid/__card/__description/card__description.css);
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__description/card__description.css);
+@import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/card/__taitle/card__taitle.css);
 @import url(../blocks/photo-grid/__list/photo-grid__list.css);
+@import url(../blocks/like/like__color.css);
 /* блок footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__item/footer__item.css);
 /* блок popup */
 @import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__btn/popup__btn.css);
 @import url(../blocks/popup/__btn/_action/popup__btn_action_close.css);
 @import url(../blocks/popup/__btn/_action/popup__btn_action_submit.css);
