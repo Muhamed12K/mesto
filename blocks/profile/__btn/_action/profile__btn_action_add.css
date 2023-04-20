@@ -8,6 +8,7 @@
   height: 50px;
   width: 100%;
   margin: 10px 0 40px;
+  transition: all .5s ease;
 }
 
 .profile__btn_action_add:enabled:hover {

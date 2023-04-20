@@ -1,8 +1,0 @@
-.shaded {
-  opacity: 1;
-  transition: opacity .5s ease;
-}
-
-.shaded:hover {
-  opacity: 0.8;
-}

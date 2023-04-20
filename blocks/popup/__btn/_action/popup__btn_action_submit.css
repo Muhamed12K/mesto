@@ -9,6 +9,11 @@
   margin-top: 48px;
   text-align: center;
   transition: all .5s ease;
+  opacity: 1;
+}
+
+.popup__btn_action_submit:hover {
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 600px) {
