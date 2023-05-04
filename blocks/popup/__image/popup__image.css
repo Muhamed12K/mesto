@@ -1,0 +1,12 @@
+.popup__image {
+  display: block;
+  height: calc(100% - 25px);
+  margin: 0;
+  max-height: 75vh;
+  max-width: 75vw;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  padding: 0;
+}

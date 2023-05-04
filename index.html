@@ -20,72 +20,59 @@
         <img class="profile__image" src="./images/avatar.jpg" alt="фото профиля">
         <div class="profile__info">
           <div class="profile__name-container">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <button type="button" class="profile__btn profile__btn_action_edit"></button>
+            <h1 id="profile-name" class="profile__name">Жак-Ив Кусто</h1>
+            <button id="profile-edit" type="button" class="profile__btn profile__btn_action_edit"></button>
           </div>
-          <p class="profile__work">Исследователь океана</p>
+          <p id="profile-work" class="profile__work">Исследователь океана</p>
         </div>
-        <button type="button" class="profile__btn profile__btn_action_add"></button>
+        <button id="button-add-profile" type="button" class="profile__btn profile__btn_action_add"></button>
       </section>
       <section class="photo-grid">
-        <ul class="photo-grid__list">
-          <li class="card">
-            <img class="card__image" src="./images/karachaeva-chercesia.jpg" alt="Карачаево-Черкессия">
+        <template id="card-template" class="card-template">
+          <li class="card"> 
+            <img class="card__image" src="xxx" alt="">
+            <button id="delete-card" class="card__btn card__btn_action_del"></button>
             <div class="card__description">
-              <h2 class="card__taitle">Карачаево-Черкессия</h2>
-              <button type="button" class="card__btn"></button>
+              <h2 class="card__taitle"></h2>
+              <button id="card-like" type="button" class="card__btn card__btn_action_like"></button>
             </div>
           </li>
-          <li class="card">
-            <img class="card__image" src="./images/elbrus.png" alt="Гора Эльбрус">
-            <div class="card__description">
-              <h2 class="card__taitle">Гора Эльбрус</h2>
-              <button type="button" class="card__btn"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img class="card__image" src="./images/dombai.png" alt="Домбай">
-            <div class="card__description">
-              <h2 class="card__taitle">Домбай</h2>
-              <button type="button" class="card__btn"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img class="card__image" src="./images/images1.jpeg" alt="Горы Альпы">
-            <div class="card__description">
-              <h2 class="card__taitle">Горы Альпы</h2>
-              <button type="button" class="card__btn"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img class="card__image" src="./images/images2.jpg" alt="Горы Саров">
-            <div class="card__description">
-              <h2 class="card__taitle">Горы Саров</h2>
-              <button type="button" class="card__btn"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img class="card__image" src="./images/i.jpg" alt="дерево Гинкго">
-            <div class="card__description">
-              <h2 class="card__taitle">дерево Гинкго</h2>
-              <button type="button" class="card__btn"></button>
-            </div>
-          </li>
-        </ul>
+        </template>
+        <ul id="card-container" class="photo-grid__list"></ul>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__item">© 2023 Mesto Russia</p>
     </footer>
-    <div class="popup">
+    <div id="popup-profile" class="popup">
       <div class="popup__container">
-          <button type="button" class="popup__btn popup__btn_action_close" title="Закрыть форму без сохранения данных"></button>
-          <form class="popup__form" name="edi-profile">
+          <button id="cancel-changes-profile" type="button" class="popup__btn popup__btn_action_close" title="Закрыть форму без сохранения данных"></button>
+          <form id="form-profile" class="popup__form" name="edi-profile">
               <h3 class="popup__heading">Редактировать профиль</h3>
-              <input class="popup__item popup__item_type_name" placeholder="Имя" name="name" type="text">
-              <input class="popup__item popup__item_type_info" placeholder="О себе" name="info" type="text">
-              <button type="submit" class="popup__btn popup__btn_action_submit">Сохранить</button>
+              <input id="name-field" class="popup__item popup__item_type_name" placeholder="Имя" name="name" type="text">
+              <input id="info-field" class="popup__item popup__item_type_info" placeholder="О себе" name="info" type="text">
+              <button id="save-profile" type="submit" class="popup__btn popup__btn_action_submit">Сохранить</button>
           </form>
+      </div>
+    </div>
+    <div id="popup-content" class="popup popup__content_card">
+      <div class="popup__container">
+        <button id="not-save-card" type="button" class="popup__btn popup__btn_action_close" title="Закрыть форму без сохранения данных"></button>
+        <form id="form-card" class="popup__form" name="add-place">
+          <h3 class="popup__heading">Новое место</h3>
+          <input id="field-card" name="title" class="popup__item popup__item_type_name" placeholder="Название">
+          <input id="field-link" name="link" class="popup__item popup__item_type_info" placeholder="Ссылка на картинку">
+          <button id="createCard" type="submit" class="popup__btn popup__btn_action_submit">Создать</button>
+        </form>
+      </div>
+    </div>
+    <div id="popup-zoom" class="popup popup_content_image">
+      <div class="popup__image-box">
+        <button id="zoom-close" type="button" class="popup__btn popup__btn_action_close" title="Закрыть окно просмотра"></button>
+        <figure id="popup-figure" class="popup__figure">
+          <img id="zoom-img" src="" class="popup__image" alt="">
+          <figcaption id="img-caption" class="popup__image-caption" ></figcaption>
+        </figure>
       </div>
     </div>
   <script src="./scripts/index.js"></script>
