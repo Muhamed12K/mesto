@@ -119,6 +119,7 @@ function createCard(item) {
   cardElement.querySelector(".card__description").content =
   cardElement.querySelector(".card__image").src = item.link;
   cardElement.querySelector(".card__taitle").textContent = item.name;
+  cardElement.querySelector(".card__image").alt = item.name;
   function setEvt(cardElement) {
     cardElement
       .querySelector(".card__btn_action_like")
