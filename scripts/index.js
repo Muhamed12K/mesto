@@ -59,16 +59,14 @@ profailClose.addEventListener("click", function (evt) {
 
 // функция лайка
 function like(evt) {
-  let likeListCards = document.querySelectorAll(".card__btn_action_like");
 
-  likeListCards = evt.target;
+  const likeListCards = evt.target;
   likeListCards.classList.toggle("card__like_color");
 }
 // функция удаления карточки
 function removeCard(evt) {
-  let listDelCards = document.querySelectorAll("#delete-cards");
 
-  listDelCards = evt.target.closest(".card");
+  const listDelCards = evt.target.closest(".card");
   listDelCards.remove();
 }
 // масив карточек 
@@ -115,8 +113,8 @@ function createCard(item) {
   const cardElement = cardTemplate.cloneNode(true);
   setEvt(cardElement);
 
-  cardElement.querySelector(".card").content =
-  cardElement.querySelector(".card__description").content =
+  cardElement.querySelector(".card").content;
+  cardElement.querySelector(".card__description").content;
   cardElement.querySelector(".card__image").src = item.link;
   cardElement.querySelector(".card__taitle").textContent = item.name;
   cardElement.querySelector(".card__image").alt = item.name;
