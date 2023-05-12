@@ -65,6 +65,7 @@ profileButtonEdit.addEventListener("click", () => {
   openPopup(popupProfile);
   nameField.value = profileName.textContent;
   infoField.value = profileWork.textContent;
+  
 })
 // закрыть без сохранения, форма профиля
 profailClose.addEventListener("click", function (evt) {
@@ -83,33 +84,6 @@ function removeCard(evt) {
   const listDelCards = evt.target.closest(".card");
   listDelCards.remove();
 }
-// масив карточек 
-const initialCards = [
-  {
-    name: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-  },
-  {
-    name: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-  },
-  {
-    name: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-  },
-  {
-    name: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-  },
-  {
-    name: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-  },
-  {
-    name: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-  },
-];
 
 // реализация popup зума
 const cardZoom = function (evt) {
@@ -125,22 +99,21 @@ zoomClose.addEventListener("click", function (evt) {
 // реализация масива карточек
 function createCard(item) {   
   const cardElement = cardTemplate.cloneNode(true);
-  setEvt(cardElement);
 
   cardElement.querySelector(".card__image").src = item.link;
   cardElement.querySelector(".card__taitle").textContent = item.name;
   cardElement.querySelector(".card__image").alt = item.name;
-  function setEvt(cardElement) {
-    cardElement
-      .querySelector(".card__btn_action_like")
-      .addEventListener("click", like);
-    cardElement
-      .querySelector(".card__btn_action_del")
-      .addEventListener("click", removeCard);
-    cardElement
-      .querySelector(".card__image")
-      .addEventListener("click", cardZoom);
-  }
+ 
+  cardElement
+    .querySelector(".card__btn_action_like")
+    .addEventListener("click", like);
+  cardElement
+    .querySelector(".card__btn_action_del")
+    .addEventListener("click", removeCard);
+  cardElement
+    .querySelector(".card__image")
+    .addEventListener("click", cardZoom);
+  
   return cardElement;
 }
 // открытие формы добавления карточки
@@ -150,9 +123,13 @@ buttonAddProfile.addEventListener("click", function (evt) {
 // закрыть без сохранения, форма добавления карточки
 notSaveCard.addEventListener("click", function (evt) {
   closePopup(modalCard);
+  modalCard.querySelectorAll('input').forEach(function(item){
+    item.value = '';
+  });
+  
 });
 // слушатель добавления карточки
-function cardFormSubmit(evt) {
+function submitCardForm(evt) {
   evt.preventDefault();
 
   const nextCard = {
@@ -163,8 +140,12 @@ function cardFormSubmit(evt) {
   const newCard = createCard(nextCard);
   cardContainer.prepend(newCard);
   closePopup(modalCard);
+  
+  modalCard.querySelectorAll('input').forEach(function(item){
+    item.value = '';
+  });
 }
-formCard.addEventListener("submit", cardFormSubmit);
+formCard.addEventListener("submit", submitCardForm);
 function addCard(cardElement) {
   cardContainer.prepend(cardElement);
 }
