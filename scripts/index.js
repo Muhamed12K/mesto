@@ -27,13 +27,29 @@ const zoomImg = document.querySelector("#zoom-img");
 const imgCaption = document.querySelector("#img-caption");
 const zoomClose = document.querySelector("#zoom-close");
 
+const closePopupByEsc = (event) => {
+  if (event.code === "Escape") {
+    closePopup(document.querySelector(".popup_opened"));
+  }
+};
+
+const closePopupByOverlay = (event) => {
+  if (event.target === event.currentTarget) {
+    closePopup(event.currentTarget);
+  }
+};
+
 // общая функция открытия всех popup
 function openPopup(popupElement) {
   popupElement.classList.add("popup_opened");
+  window.addEventListener("keydown", closePopupByEsc);
+  popupElement.addEventListener("click", closePopupByOverlay);
 }
 // общая функция закрытие всех popup 
 function closePopup (popupClose) {
   popupClose.classList.remove("popup_opened");
+  window.removeEventListener("keydown", closePopupByEsc);
+  popupClose.removeEventListener("click", closePopupByOverlay);
 }
 
 // открытие popup данных профиля

@@ -49,8 +49,10 @@
           <button id="cancel-changes-profile" type="button" class="popup__btn popup__btn_action_close" title="Закрыть форму без сохранения данных"></button>
           <form id="form-profile" class="popup__form" name="edi-profile">
               <h3 class="popup__heading">Редактировать профиль</h3>
-              <input id="name-field" class="popup__item popup__item_type_name" placeholder="Имя" name="name" type="text">
-              <input id="info-field" class="popup__item popup__item_type_info" placeholder="О себе" name="info" type="text">
+              <input id="name-field" class="popup__item popup__item_type_name" placeholder="Имя" name="name" type="text" maxlength="40" minlength="2" required>
+              <span class="popup__error" id="name-field-error">Вы пропустили это поле.</span>
+              <input id="info-field" class="popup__item popup__item_type_info" placeholder="О себе" name="info" type="text" maxlength="200" minlength="2" required>
+              <span class="popup__error popup__error_submit" id="info-field-error">Вы пропустили это поле.</span>
               <button id="save-profile" type="submit" class="popup__btn popup__btn_action_submit">Сохранить</button>
           </form>
       </div>
@@ -60,8 +62,10 @@
         <button id="not-save-card" type="button" class="popup__btn popup__btn_action_close" title="Закрыть форму без сохранения данных"></button>
         <form id="form-card" class="popup__form" name="add-place">
           <h3 class="popup__heading">Новое место</h3>
-          <input id="field-card" name="title" class="popup__item popup__item_type_name" placeholder="Название">
-          <input id="field-link" name="link" class="popup__item popup__item_type_info" placeholder="Ссылка на картинку">
+          <input id="field-card" name="title" class="popup__item popup__item_type_name" placeholder="Название" maxlength="30" minlength="1" required>
+          <span class="popup__error" id="field-card-error">Ошибка</span>
+          <input id="field-link" name="link" type="url" class="popup__item popup__item_type_info" placeholder="Ссылка на картинку" required>
+          <span class="popup__error popup__error_submit" id="field-link-error">Введите адрес сайта.</span>
           <button id="createCard" type="submit" class="popup__btn popup__btn_action_submit">Создать</button>
         </form>
       </div>
@@ -74,5 +78,6 @@
         </figure>
     </div>
   <script src="./scripts/index.js"></script>
+  <script src="./scripts/validate.js"></script>
   </body>
 </html>

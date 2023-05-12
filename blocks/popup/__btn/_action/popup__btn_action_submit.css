@@ -16,6 +16,13 @@
   opacity: 0.8;
 }
 
+.popup__btn_action_submit:disabled {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  opacity: .2;
+}
+
 @media screen and (max-width: 600px) {
   .popup__btn_action_submit{
     font-size: 14px;
