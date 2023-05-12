@@ -1,8 +1,6 @@
 // popup формы
 const formProfile = document.querySelector("#form-profile");
 const formCard = document.querySelector("#form-card");
-const popupElement = document.querySelector(".popup");
-const popupClose = document.querySelector(".popup__btn_action_close")
 // атрибуты профиля
 const profileName = document.querySelector("#profile-name");
 const profileWork = document.querySelector("#profile-work");
@@ -129,8 +127,6 @@ function createCard(item) {
   const cardElement = cardTemplate.cloneNode(true);
   setEvt(cardElement);
 
-  cardElement.querySelector(".card").content;
-  cardElement.querySelector(".card__description").content;
   cardElement.querySelector(".card__image").src = item.link;
   cardElement.querySelector(".card__taitle").textContent = item.name;
   cardElement.querySelector(".card__image").alt = item.name;
