@@ -19,6 +19,7 @@ const modalCard = document.querySelector("#popup-content");
 const notSaveCard = document.querySelector("#not-save-card");
 const fieldCard = document.querySelector("#field-card");
 const fieldLink = document.querySelector("#field-link");
+const buttonCreateCard = document.querySelector('#createCard');
 // атрибуты popup просмотра фотографии
 const popupZoom = document.querySelector("#popup-zoom");
 const zoomImg = document.querySelector("#zoom-img");
@@ -123,10 +124,6 @@ buttonAddProfile.addEventListener("click", function (evt) {
 // закрыть без сохранения, форма добавления карточки
 notSaveCard.addEventListener("click", function (evt) {
   closePopup(modalCard);
-  modalCard.querySelectorAll('input').forEach(function(item){
-    item.value = '';
-  });
-  
 });
 // слушатель добавления карточки
 function submitCardForm(evt) {
@@ -139,18 +136,21 @@ function submitCardForm(evt) {
   
   const newCard = createCard(nextCard);
   cardContainer.prepend(newCard);
+  formCard.reset();
+
   closePopup(modalCard);
-  
-  modalCard.querySelectorAll('input').forEach(function(item){
-    item.value = '';
-  });
+
+  buttonCreateCard.classList.add('popup__btn_action_submit:disabled');
+  buttonCreateCard.setAttribute('disabled', true);
 }
+
 formCard.addEventListener("submit", submitCardForm);
+
 function addCard(cardElement) {
   cardContainer.prepend(cardElement);
 }
 function renderCards() {
-  initialCards.reverse().forEach(item => {
+  initialCards.reverse().forEach((item) => {
     const cardHTML = createCard(item);
     addCard(cardHTML);
   })

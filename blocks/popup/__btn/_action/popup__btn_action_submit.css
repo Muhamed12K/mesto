@@ -1,3 +1,10 @@
+.popup__btn_action_submit:disabled {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  opacity: .2;
+}
+
 .popup__btn_action_submit {
   background-color: #000;
   border-radius: 2px;
@@ -14,13 +21,6 @@
 
 .popup__btn_action_submit:hover {
   opacity: 0.8;
-}
-
-.popup__btn_action_submit:disabled {
-  background-color: #fff;
-  border: 1px solid #000;
-  color: #000;
-  opacity: .2;
 }
 
 @media screen and (max-width: 600px) {

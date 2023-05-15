@@ -35,17 +35,19 @@ const checkValid = (input, {inputErrorClass, ...rest}) => {
     currentInputError.classList.add('visible');
   }
 }
+
 const disableButton = (button, {inactiveButtonClass}) => {
   button.classList.add(inactiveButtonClass);
-  button.setAttribute('disabled', false)
+  button.setAttribute('disabled', true)
 }
 const enableButton = (button, {inactiveButtonClass}) => {
-  button.classList.remove(inactiveButtonClass)
+  button.classList.remove(inactiveButtonClass);
   button.removeAttribute('disabled')
 }
 const invalidInput = (formInputs) => {
   return formInputs.some((item) => { return !item.validity.valid})
 }
+
 enableValidation({
   formSelector: '.popup__form',
   inputSelector: '.popup__item',
