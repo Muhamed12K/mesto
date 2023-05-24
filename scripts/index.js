@@ -7,16 +7,16 @@ const profileWork = document.querySelector(".profile__work");
 const profileButtonEdit = document.querySelector(".profile__btn_action_edit");
 const buttonAddProfile = document.querySelector(".profile__btn_action_add");
 // атрибуты формы профиля
-const profailClose = document.querySelector(".popup__btn_action_close_porfile");
-const nameField = document.querySelector(".popup__item_type_name_profile");
-const infoField = document.querySelector(".popup__item_type_info_profile");
+const profailClose = document.querySelector(".popup__btn_action_close-porfile");
+const nameField = document.querySelector(".popup__item_type_name-profile");
+const infoField = document.querySelector(".popup__item_type_info-profile");
 const popupProfile = document.querySelector(".popup_profile");
 // атрибуты popup карточек
 const modalCard = document.querySelector(".popup_content_card");
-const notSaveCard = document.querySelector(".popup__btn_action_close_card");
-const fieldCard = document.querySelector(".popup__item_type_name_card");
-const fieldLink = document.querySelector(".popup__item_type_info_link");
-const buttonCreateCard = document.querySelector('.popup__btn_action_submit_card');
+const notSaveCard = document.querySelector(".popup__btn_action_close-card");
+const fieldCard = document.querySelector(".popup__item_type_name-card");
+const fieldLink = document.querySelector(".popup__item_type_info-link");
+const buttonCreateCard = document.querySelector('.popup__btn_action_submit-card');
 // импорт масива карточек
 import { initialCards } from "./initialCards.js";
 // иморт класса Card

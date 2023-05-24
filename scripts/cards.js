@@ -7,7 +7,7 @@ class Card {
     this._templateSelector = templateSelector;
     
     this._popupZoom = document.querySelector(".popup_content_image");
-    this._zoomClose = document.querySelector(".popup__btn_action_close_zoom");
+    this._zoomClose = document.querySelector(".popup__btn_action_close-zoom");
     this._zoomImg = document.querySelector(".popup__image");
     this._imgCaption = document.querySelector(".popup__image-caption");
   }
