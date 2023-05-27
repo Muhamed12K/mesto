@@ -110,9 +110,8 @@ function submitCardForm(evt) {
     link: fieldLink.value,
   };
   
-  const newCard = createCard(nextCard);
-
-  cardList.prepend(newCard.generateCard());
+  cardList.prepend(createCard(nextCard));
+  
   closePopup(modalCard);
   formCard.reset();
 
