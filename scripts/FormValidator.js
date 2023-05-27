@@ -28,21 +28,21 @@
       this._formButton.removeAttribute('disabled')
     }
 
-    _disableButton() {
+    disableButton() {
       this._formButton.classList.add(this._options.inactiveButtonClass);
       this._formButton.setAttribute('disabled', true)
     }
 
     _setEventHandlers() {
 
-      this._disableButton();
+      this.disableButton();
 
       this._formInputs.forEach((input) => {
         input.addEventListener('input', () => {
           this._isValid(input)
 
           if (this._hasErrors(this._formInputs)){
-            this._disableButton(this._formButton);
+            this.disableButton(this._formButton);
           } else {
             this._enableButton(this._formButton);
           }

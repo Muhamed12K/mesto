@@ -99,7 +99,7 @@ zoomClose.addEventListener("click", function (evt) {
 
 // функция создания карточки
 function createCard (data) {
-  return new Card(data, '.card-template', cardZoom);
+  return (new Card(data, '.card-template', cardZoom)).generateCard();
 }
 // слушатель добавления карточки
 function submitCardForm(evt) {
@@ -115,8 +115,8 @@ function submitCardForm(evt) {
   cardList.prepend(newCard.generateCard());
   closePopup(modalCard);
   formCard.reset();
-  
-  cardFormValidator.enableValidation();
+
+  cardFormValidator.disableButton();
 }
 
 formCard.addEventListener("submit", submitCardForm);
@@ -128,11 +128,7 @@ const renderElements = (isGrid) => {
   cardList.innerHTML = '';
 
   initialCards.forEach( (item) =>{
-  
-    const card = createCard(item)
-
-    const cardElement = card.generateCard();
-    cardList.append(cardElement);
+    cardList.append(createCard(item));
   });
 }
 
