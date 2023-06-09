@@ -1,12 +1,11 @@
 class Card {
-  constructor(data, templateSelector, cardZoom) {
+  constructor(data, templateSelector, handleCardClick) {
 
     this._image = data.link;
     this._alt = data.name;
     this._title = data.name;
     this._templateSelector = templateSelector;
-    this._zoomImagePopup = cardZoom;
-   
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -45,7 +44,11 @@ class Card {
     this._element
       .querySelector('.card__image')
       .addEventListener('click', (evt) => {
-      this._zoomImagePopup(evt);
+        console.log(this._handleCardClick);
+      this._handleCardClick({
+        link: this._image,
+        name: this._title
+      });
     });
   }
 
