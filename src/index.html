@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+    <meta name="keywords" content="html, css, js">
+    <meta name="author" content="Мухамед Кашежев">
+  </head>
+  <body class="page">
+    <header class="header">
+      <img
+        class="header__logo"
+        src="<%=require('./images/header_logo.svg')%>"
+        alt="логотип сайта">
+    </header>
+    <main>
+      <section class="profile">
+        <img class="profile__image" src="<%=require('./images/avatar.jpg')%>" alt="фото профиля">
+        <div class="profile__info">
+          <div class="profile__name-container">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button type="button" class="profile__btn profile__btn_action_edit"></button>
+          </div>
+          <p class="profile__work">Исследователь океана</p>
+        </div>
+        <button type="button" class="profile__btn profile__btn_action_add"></button>
+      </section>
+      <section class="photo-grid">
+        <template class="card-template">
+          <li class="card"> 
+            <img class="card__image" src="xxx" alt="">
+            <button class="card__btn card__btn_action_del"></button>
+            <div class="card__description">
+              <h2 type="title" class="card__taitle"></h2>
+              <button type="button" class="card__btn card__btn_action_like"></button>
+            </div>
+          </li>
+        </template>
+        <ul class="photo-grid__list"></ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__item">© 2023 Mesto Russia</p>
+    </footer>
+    <div class="popup popup_profile">
+      <div class="popup__container">
+          <button type="button" class="popup__btn popup__btn_action_close popup__btn_action_close-porfile" title="Закрыть форму без сохранения данных"></button>
+          <form class="popup__form popup__form_profile" name="edi-profile">
+              <h3 class="popup__heading">Редактировать профиль</h3>
+              <input id="name-field" class="popup__item popup__item_type_name popup__item_type_name-profile" placeholder="Имя" name="name" type="text" maxlength="40" minlength="2" required>
+              <span class="popup__error" id="name-field-error"></span>
+              <input id="info-field" class="popup__item popup__item_type_info popup__item_type_info-profile" placeholder="О себе" name="info" type="text" maxlength="200" minlength="2" required>
+              <span class="popup__error popup__error_submit" id="info-field-error"></span>
+              <button type="submit" class="popup__btn popup__btn_action_submit">Сохранить</button>
+          </form>
+      </div>
+    </div>
+    <div class="popup popup_content_card">
+      <div class="popup__container">
+        <button type="button" class="popup__btn popup__btn_action_close popup__btn_action_close-card" title="Закрыть форму без сохранения данных"></button>
+        <form class="popup__form popup__form_card" name="add-place">
+          <h3 class="popup__heading">Новое место</h3>
+          <input id="field-card" name="title" class="popup__item popup__item_type_name popup__item_type_name-card" placeholder="Название" maxlength="30" minlength="1" required>
+          <span class="popup__error" id="field-card-error"></span>
+          <input id="field-link" name="link" type="url" class="popup__item popup__item_type_info popup__item_type_info-link" placeholder="Ссылка на картинку" required>
+          <span class="popup__error popup__error_submit" id="field-link-error"></span>
+          <button type="submit" class="popup__btn popup__btn_action_submit popup__btn_action_submit-card">Создать</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_content_image">
+        <figure class="popup__figure">
+          <button type="button" class="popup__btn popup__btn_action_close popup__btn_action_close-zoom" title="Закрыть окно просмотра"></button>
+          <img src="#" class="popup__image" alt="">
+          <figcaption class="popup__image-caption" alt=""></figcaption>
+        </figure>
+    </div>
+  </body>
+</html>
