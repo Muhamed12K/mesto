@@ -1,9 +1,8 @@
 class UserInfo {
-    constructor({ selectorUserName, selectorUserinfo}) {
-        this._profileName = selectorUserName;
-        this._profileinfo = selectorUserinfo;
-        this._profileName = document.querySelector('.profile__name');
-        this._profileinfo = document.querySelector('.profile__work');
+    constructor(data) {
+
+        this._profileName = document.querySelector(data.selectorUserName);
+        this._profileinfo = document.querySelector(data.selectorUserInfo);
     }
 
     // Функция получения информации из профиля
@@ -21,4 +20,4 @@ class UserInfo {
     }
 }
 
-export { UserInfo };
+export {UserInfo};

@@ -20,8 +20,8 @@ class PopupWithForm extends Popup {
 
     // Функция наполнения формы input
     setInputValues = (data) => {
-        this._inputList.forEach((input, i) => {
-            input.value = Object.values(data)[i];
+        this._inputList.forEach((input) => {
+            input.value = data[input.name];
         });
     }
 
@@ -43,4 +43,4 @@ class PopupWithForm extends Popup {
     }
 }
 
-export { PopupWithForm };
+export {PopupWithForm};
