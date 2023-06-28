@@ -1,6 +1,6 @@
 class UserInfo {
     constructor(data) {
-
+        this._profileAvatar = document.querySelector(data.selectorUserAvatar);
         this._profileName = document.querySelector(data.selectorUserName);
         this._profileinfo = document.querySelector(data.selectorUserInfo);
     }
@@ -17,6 +17,10 @@ class UserInfo {
     setUserInfo(name, info) {
         this._profileName.textContent = name;
         this._profileinfo.textContent = info;
+    }
+
+    setUserAvatar( url ) {
+        this._profileAvatar.src = url.avatar
     }
 }
 

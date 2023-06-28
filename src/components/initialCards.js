@@ -30,4 +30,22 @@ const initialCards = [
     link: img5,
   },
 ];
-export{initialCards};
+
+const apiConfig = {
+  url: 'https://mesto.nomoreparties.co/v1/cohort-69',
+  headers:{
+    'Content-Type': "application/json",
+    authorization: '82845743-3191-491c-a9be-ca3cca6ed2f3'
+  }
+}
+
+const formValidationConfig = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible'
+}
+
+export { initialCards, formValidationConfig, apiConfig };
