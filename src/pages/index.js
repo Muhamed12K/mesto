@@ -6,7 +6,7 @@ import {Card} from '../components/Card.js';
 import {FormValidator} from '../components/FormValidator.js';
 import {PopupWithForm} from '../components/PopupWithForm.js';
 import {PopupWithImag} from '../components/PopupWithImag.js';
-import {PopupWithRemoval} from '../components/PopupWithRemoval.js';
+import {PopupWithConfirmation} from '../components/PopupWithConfirmation.js';
 import {Section} from '../components/Section.js';
 import {UserInfo} from '../components/UserInfo.js';
 
@@ -81,7 +81,7 @@ function createCard(data, allowDelete) {
 }
 
 //Функция создания Popup подтверждения удаления
-const popupFormDelete = new PopupWithRemoval('.popup_type_delete', function (id, card) {
+const popupFormDelete = new PopupWithConfirmation('.popup_type_delete', function (id, card) {
 
         popupFormDelete.renderPreloader(true, 'Удаление...');
         api.deleteCard(id)

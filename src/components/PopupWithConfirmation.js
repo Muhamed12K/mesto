@@ -1,6 +1,6 @@
 import Popup from "./Popup.js";
 
-class PopupWithRemoval extends Popup {
+class PopupWithConfirmation extends Popup {
     constructor(popupSelector, submitCallback) {
         super(popupSelector);
         this._submitCallback = submitCallback;
@@ -34,4 +34,4 @@ class PopupWithRemoval extends Popup {
     }
 }
 
-export {PopupWithRemoval};
+export {PopupWithConfirmation};
