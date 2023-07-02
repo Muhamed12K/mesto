@@ -1,16 +1,16 @@
 import Popup from "./Popup.js";
 
 class PopupWithRemoval extends Popup {
-    constructor(selectorPopup, { submitCallback }) {
-        super(selectorPopup);
+    constructor(popupSelector, submitCallback) {
+        super(popupSelector);
         this._submitCallback = submitCallback;
-        this._buttonSubmit = this._popup.querySelector('.popup__button-submit');
+        this._buttonSubmit   = this._popup.querySelector('.popup__btn_action_submit-yes');
     }
 
     /**Функция открытия Popup и получения данных о карточке */
     open(cardElement, idCard) {
         super.open();
-        this.id = idCard;
+        this.id   = idCard;
         this.card = cardElement;
     }
 
@@ -18,7 +18,7 @@ class PopupWithRemoval extends Popup {
     renderPreloader(loading, displayText) {
         if (!this._buttonSubmit) return;
         if (loading) {
-            this.defaulText = this._buttonSubmit.textContent;
+            this.defaulText                = this._buttonSubmit.textContent;
             this._buttonSubmit.textContent = displayText;
         } else {
             this._buttonSubmit.textContent = this.defaulText;
@@ -29,9 +29,9 @@ class PopupWithRemoval extends Popup {
     setEventListeners() {
         super.setEventListeners();
         this._buttonSubmit.addEventListener('click', () => {
-            this._submitCallback(this.id, this.card);
+          this._submitCallback(this.id, this.card);
         })
     }
 }
 
-export { PopupWithRemoval };
+export {PopupWithRemoval};

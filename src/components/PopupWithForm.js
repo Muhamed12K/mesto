@@ -4,9 +4,13 @@ class PopupWithForm extends Popup {
     constructor(selector, submitCallback) {
         super(selector);
         this.submitCallback = submitCallback;
-        this._formSubmit = this._popup.querySelector('.popup__form');
-        this._inputList = Array.from(this._formSubmit.querySelectorAll('.popup__item'));
-        this._buttonSubmit = this._formSubmit.querySelector('.popup__btn_action_submit');
+        this._formSubmit    = this._popup.querySelector('.popup__form');
+        this._inputList     = Array.from(this._formSubmit.querySelectorAll('.popup__item'));
+        this._buttonSubmit  = this._formSubmit.querySelector('.popup__btn_action_submit');
+    }
+
+    setButtonLabel(text) {
+        this._buttonSubmit.innerText = text;
     }
 
     // Получить входные значения input
@@ -37,6 +41,7 @@ class PopupWithForm extends Popup {
 
         this._formSubmit.addEventListener('submit', (evt) => {
             evt.preventDefault();
+
             this.submitCallback(this._getInputValues());
             this.close();
         });

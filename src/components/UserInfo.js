@@ -1,8 +1,8 @@
 class UserInfo {
     constructor(data) {
         this._profileAvatar = document.querySelector(data.selectorUserAvatar);
-        this._profileName = document.querySelector(data.selectorUserName);
-        this._profileinfo = document.querySelector(data.selectorUserInfo);
+        this._profileName   = document.querySelector(data.selectorUserName);
+        this._profileinfo   = document.querySelector(data.selectorUserInfo);
     }
 
     // Функция получения информации из профиля
@@ -19,8 +19,8 @@ class UserInfo {
         this._profileinfo.textContent = info;
     }
 
-    setUserAvatar( url ) {
-        this._profileAvatar.src = url.avatar
+    setUserAvatar(url) {
+        this._profileAvatar.src = url
     }
 }
 

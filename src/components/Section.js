@@ -8,7 +8,7 @@ export class Section {
 
     render() {
         this._items.forEach((item) => {
-            this._node.append(this._renderer(item));
+            this._node.append(this._renderer(item, false));
         })
     };
 
