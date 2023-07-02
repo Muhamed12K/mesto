@@ -11,17 +11,18 @@ import {Section} from '../components/Section.js';
 import {UserInfo} from '../components/UserInfo.js';
 
 // API
-const api   = new Api(apiConfig);
-let section = {};
+const api         = new Api(apiConfig);
+
+let section       = {};
 let currentUserId = null
 // Получить ответ
 Promise.all([api.getUserInfoApi(), api.getInitialCards()])
     .then(([userData, initialCards]) => {
         currentUserId = userData._id;
-        section = new Section({
+        section       = new Section({
             items   : initialCards,
             renderer: createCard
-        }, '.photo-grid__list', currentUserId);
+        }, '.photo-grid__list');
         section.render();
 
         userInfo.setUserInfo(userData.name, userData.about);
@@ -39,15 +40,16 @@ const userInfo = new UserInfo({
 
 // редактирование Popup профиля
 const popupFormProfile = new PopupWithForm('.popup_profile', (data) => {
-    popupFormProfile.setButtonLabel('Сохранение...');
 
+    popupFormProfile.renderPreloader(true,'Сохранение...');
     api.setUserInfo(data)
         .then(data => {
             userInfo.setUserInfo(data.name, data.about);
         })
+        .catch((err) => alert(err))
         .finally(() => {
-            popupFormProfile.setButtonLabel('Сохранить');
-        });
+            popupFormProfile.renderPreloader(false);
+        })
 });
 
 // Функция открытия Popup профиля
@@ -61,52 +63,51 @@ profileButtonEdit.addEventListener('click', () => {
 const popupWithImag   = new PopupWithImag('.popup_content_image');
 const handleCardClick = function (data) {
     popupWithImag.open(data);
+
 };
-const handleCardDel   = function (selector, id) {
+
+const handleCardDel = function (selector, id) {
     popupFormDelete.open(selector, id);
 };
 
 // функция создания карточки
 function createCard(data, allowDelete) {
     if (allowDelete) {
-        return (new Card(data, '.card-template', handleCardClick))
+        return (new Card(data, currentUserId, '.card-template', handleCardClick, handleCardDel))
             .generateCard();
     }
-
-    return (new Card(data, '.card-template', handleCardClick))
+    return (new Card(data, currentUserId, '.card-template', handleCardClick))
         .generateCard();
 }
 
 //Функция создания Popup подтверждения удаления
-const popupFormDelete = new PopupWithRemoval('.popup_type_delete', function (id, card)  {
-    // todo вызвать Апи
-    // при получении ответа удлать у себя
-    popupFormDelete.renderPreloader(true, 'Удаление...');
-    api.deleteCard(id)
-        .then(() => {
-            card.deleteCard();
-            popupFormDelete.close();
-        })
-        .catch((err) => alert(err))
-        .finally( () => {
-            popupFormDelete.renderPreloader(false);
-        })
-}
+const popupFormDelete = new PopupWithRemoval('.popup_type_delete', function (id, card) {
+
+        popupFormDelete.renderPreloader(true, 'Удаление...');
+        api.deleteCard(id)
+            .then(() => {
+                card.deleteCard();
+                popupFormDelete.close();
+            })
+            .catch((err) => alert(err))
+            .finally(() => {
+                popupFormDelete.renderPreloader(false);
+            })
+    }
 );
 popupFormDelete.setEventListeners();
 
 // Функция создания Popup редактирования аватара
 const popupFormAvatar = new PopupWithForm('.popup_type_avatar', (data) => {
-    // todo сделать запрос в апи
-    // при получении ответа, установить ссылку для аватарки
-    popupFormAvatar.setButtonLabel('Сохранение...');
 
+    popupFormAvatar.renderPreloader(true,'Сохранение...');
     api.setUserAvatar(data)
         .then(data => {
             userInfo.setUserAvatar(data.avatar);
         })
-        .finally( () => {
-            popupFormAvatar.setButtonLabel('Сохранить');
+        .catch((err) => alert(err))
+        .finally(() => {
+            popupFormAvatar.renderPreloader(false);
         })
 
 });
@@ -119,19 +120,16 @@ popupOpenAvatar.addEventListener('click', () => {
 
 //  Открытие и закрытие формы добавления карточек
 const popupFormCard    = new PopupWithForm('.popup_content_card', (data) => {
-    // todo  сделать запрос в апи
-    // при получении ответа, добавть карточку в список
-    popupFormCard.setButtonLabel('Создание...');
 
+    popupFormCard.renderPreloader(true,'Создание...');
     api.addNewCard(data)
         .then(data => {
-            console.log(data)
             section.addItem(createCard(data, currentUserId, true));
         })
-        .finally( () => {
-            popupFormCard.setButtonLabel('Создать');
+        .catch((err) => alert(err))
+        .finally(() => {
+            popupFormCard.renderPreloader(false);
         })
-
 });
 const buttonCreateCard = document.querySelector(".profile__btn_action_add");
 buttonCreateCard.addEventListener('click', () => {

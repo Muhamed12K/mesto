@@ -9,10 +9,15 @@ class PopupWithForm extends Popup {
         this._buttonSubmit  = this._formSubmit.querySelector('.popup__btn_action_submit');
     }
 
-    setButtonLabel(text) {
-        this._buttonSubmit.innerText = text;
+    renderPreloader(loading, displayText) {
+        if (!this._buttonSubmit) return;
+        if (loading) {
+            this.defaulText                = this._buttonSubmit.textContent;
+            this._buttonSubmit.textContent = displayText;
+        } else {
+            this._buttonSubmit.textContent = this.defaulText;
+        }
     }
-
     // Получить входные значения input
     _getInputValues() {
         this._inputsValues = {};

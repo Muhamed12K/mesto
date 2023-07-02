@@ -14,6 +14,7 @@
 @import url(../blocks/profile/__name-container/profile__name-container.css);
 @import url(../blocks/profile/__name/profile__name.css);
 @import url(../blocks/profile/__work/profile__work.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
 /* блок photo-grid */
 @import url(../blocks/photo-grid/photo-grid.css);
 @import url(../blocks/card/card.css);
@@ -25,6 +26,8 @@
 @import url(../blocks/card/__taitle/card__taitle.css);
 @import url(../blocks/photo-grid/__list/photo-grid__list.css);
 @import url(../blocks/card/__like/card__like_color.css);
+@import url(../blocks/card/__like/__like-group/card__like-group.css);
+@import url(../blocks/card/__like/__like-span/card__like-span.css);
 /* блок footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__item/footer__item.css);
@@ -46,59 +49,4 @@
 @import url(../blocks/popup/__figure/popup__figure.css);
 @import url(../blocks/popup/_content/popup__content_image.css);
 @import url(../blocks/popup/__error/popup__error.css);
-
-.card__like-group {
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
-}
-
-.card__like-span {
-    color: #000;
-    font-family: Inter,Arial,Helvetica,sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 16px;
-    text-align: center;
-}
-
-.profile__avatar {
-    background-color: #000;
-    background-image: url("../../src/images/Vector (3).svg");
-    background-position: 40%;
-    background-repeat: no-repeat;
-    transition: opacity .8s ease-in-out;
-}
-
-.popup__container_avatar {
-    margin: 0;
-    max-width: 430px;
-    width: 100%;
-    min-width: 282px;
-    outline: none;
-    position: relative;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 25px rgba(0,0,0,.15);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    padding: 34px 36px 37px;
-}
-
-
-
-@media screen and (max-width: 430px){
-    .popup__container_avatar {
-        width: calc(100% - 40px);
-    }
-}
-
-@media screen and (max-width: 700px){
-    .popup__container_avatar {
-        height: min(272px,calc(100vh - 70px));
-    }
-}
-
-
-
+@import url(../blocks/popup/__container/__container_avatar/popup__container_avatar.css);
