@@ -23,7 +23,7 @@
 @import url(../blocks/card/__btn/_action/card__btn_action_del.css);
 @import url(../blocks/card/__description/card__description.css);
 @import url(../blocks/card/__image/card__image.css);
-@import url(../blocks/card/__taitle/card__taitle.css);
+@import url(../blocks/card/__title/card__title.css);
 @import url(../blocks/photo-grid/__list/photo-grid__list.css);
 @import url(../blocks/card/__like/card__like_color.css);
 @import url(../blocks/card/__like/__like-group/card__like-group.css);

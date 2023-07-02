@@ -27,7 +27,7 @@ class Card {
         this._setEventListeners();
 
         this._element.querySelector('.card__image').src             = this._image;
-        this._element.querySelector('.card__taitle').textContent    = this._title;
+        this._element.querySelector('.card__title').textContent     = this._title;
         this._element.querySelector('.card__image').alt             = this._alt;
         this._element.querySelector('.card__like-span').textContent = this._likes.length;
         this._likesElement = this._element.querySelector('.card__like-span')
