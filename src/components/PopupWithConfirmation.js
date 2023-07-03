@@ -1,10 +1,11 @@
 import Popup from "./Popup.js";
 
 class PopupWithConfirmation extends Popup {
-    constructor(popupSelector, submitCallback) {
+    constructor(popupSelector, submitCallback, displayText) {
         super(popupSelector);
         this._submitCallback = submitCallback;
         this._buttonSubmit   = this._popup.querySelector('.popup__btn_action_submit-yes');
+        this._displayText    = displayText;
     }
 
     /**Функция открытия Popup и получения данных о карточке */
@@ -15,11 +16,11 @@ class PopupWithConfirmation extends Popup {
     }
 
     /**Функция отображения Preloader */
-    renderPreloader(loading, displayText) {
+    renderPreloader(loading) {
         if (!this._buttonSubmit) return;
         if (loading) {
             this.defaulText                = this._buttonSubmit.textContent;
-            this._buttonSubmit.textContent = displayText;
+            this._buttonSubmit.textContent = this._displayText;
         } else {
             this._buttonSubmit.textContent = this.defaulText;
         }
@@ -29,7 +30,7 @@ class PopupWithConfirmation extends Popup {
     setEventListeners() {
         super.setEventListeners();
         this._buttonSubmit.addEventListener('click', () => {
-          this._submitCallback(this.id, this.card);
+            this._submitCallback(this.id, this.card);
         })
     }
 }

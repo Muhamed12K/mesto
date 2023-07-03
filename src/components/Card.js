@@ -1,17 +1,17 @@
-import {Api} from "./Api";
-import apiConfig from "./ApiConfig";
-
 class Card {
-    constructor(data, userId, templateSelector, handleCardClick, handleCardDel) {
-        this._userId           = userId;
-        this._image            = data.link;
-        this._alt              = data.name;
-        this._title            = data.name;
+    constructor(data, userId, templateSelector, handleCardClick, handleCardDel, handleLike) {
+        this._alt     = data.name;
+        this._id      = data._id;
+        this._image   = data.link;
+        this._likes   = data.likes;
+        this._title   = data.name;
+        this._ownerId = data.owner._id;
+        this._userId  = userId;
+
         this._templateSelector = templateSelector;
         this._handleCardClick  = handleCardClick;
         this._handleCardDel    = handleCardDel;
-        this._likes            = data.likes;
-        this._id               = data._id;
+        this._handleLike       = handleLike;
     }
 
     _getTemplate() {
@@ -22,45 +22,42 @@ class Card {
             .cloneNode(true);
     }
 
+    _isOwnCard() {
+        return this._userId === this._ownerId;
+    }
+
     generateCard() {
         this._element = this._getTemplate();
         this._setEventListeners();
 
-        this._element.querySelector('.card__image').src             = this._image;
-        this._element.querySelector('.card__title').textContent     = this._title;
-        this._element.querySelector('.card__image').alt             = this._alt;
-        this._element.querySelector('.card__like-span').textContent = this._likes.length;
-        this._likesElement = this._element.querySelector('.card__like-span')
-        this._likeCard = this._element.querySelector('.card__btn_action_like');
+        this._element.querySelector('.card__image').src         = this._image;
+        this._element.querySelector('.card__title').textContent = this._title;
+        this._element.querySelector('.card__image').alt         = this._alt;
 
-        this._likes.forEach((item) => {
-            if (item._id === this._userId) {
-                this._likeCard.classList.add('card__like_color');
-            }
-        });
+        this._likesCount = this._element.querySelector('.card__like-span')
+        this._likeCard   = this._element.querySelector('.card__btn_action_like');
 
-        if (!this._handleCardDel) {
+        if (!this._isOwnCard()) {
             this._element.querySelector('.card__btn_action_del').remove();
         }
+
+        this._updateLikesView();
+
         return this._element;
     }
 
-    _like() {
-        const api      = new Api(apiConfig);
+    updateLikes(likes) {
+        this._likes = likes;
+        this._updateLikesView();
+    }
 
-        if (!this._likeCard.classList.contains('card__like_color')) {
-            api.putCardLike(this._id)
-                .then(r => {
-                    this._likeCard.classList.add('card__like_color');
-                    this._likesElement.textContent = r.likes.length;
-                });
-        } else {
-            api.deleteCardLike(this._id)
-                .then(r => {
-                    this._likeCard.classList.remove('card__like_color');
-                    this._likesElement.textContent = r.likes.length;
-                });
-        }
+    isLiked() {
+        return this._likes.some((like) => like._id === this._userId);
+    }
+
+    _updateLikesView() {
+        this._likesCount.textContent = this._likes.length;
+        this._likeCard.classList.toggle('card__like_color', this.isLiked());
     }
 
     // функция удаления карточки
@@ -70,18 +67,16 @@ class Card {
     }
 
     _setEventListeners() {
-        if (this._handleCardDel) {
             this._element
                 .querySelector('.card__btn_action_del')
                 .addEventListener('click', () => {
                     this._handleCardDel(this, this._id);
                 });
-        }
 
         this._element
             .querySelector('.card__btn_action_like')
             .addEventListener('click', () => {
-                this._like()
+                this._handleLike(this, this.isLiked())
             });
 
         this._element
