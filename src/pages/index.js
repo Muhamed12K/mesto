@@ -12,7 +12,7 @@ import {UserInfo} from '../components/UserInfo.js';
 
 // API
 const api   = new Api(apiConfig);
-let section = new Section(createCard, '.photo-grid__list');
+const section = new Section(createCard, '.photo-grid__list');
 
 // Получить ответ
 Promise.all([api.getUserInfoApi(), api.getInitialCards()])
